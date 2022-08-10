@@ -16,7 +16,16 @@ bundleversion=${project}BV
 rpoolname=default
 workdir=$PWD
 
+if [ $# -ne 2 ]; then
+    echo "Your running $0 with argument: $@"
 
+    echo "  please pass username and password for robin user "
+    echo "     example : sh  $0 robin Robin123 "
+    echo "        '
+    echo "  "
+    echo "  example:  $0 cluster or $0 host "
+exit
+fi
 
 robin login $robinuser --password $robinpassword
 
